@@ -75,13 +75,13 @@ function App() {
         config
       ).then(res=>{
         if(res && res.data && res.data.isSuccessfull){
-          console.log("response of user",res.data)
+          console.log("response of user",res.data.user.last_hash)
           // alert("login ",res.data.message)
           if(res.data.user !== null){
             setLoggedInn(true);
             setTimeout( function() { 
               setLoggedInn(false);
-            }, 10000);
+            }, 30000);
           }
           else{
             alert("user not in whitelist")
